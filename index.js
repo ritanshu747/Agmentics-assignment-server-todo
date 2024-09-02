@@ -17,7 +17,12 @@ app.use(express.json());
 app.use('/tasks', TaskRoutes);
 
 
-
+app.get("/", (req, res) => {
+  return res.json({
+      success: true,
+      message: "Server is up and running..."
+  });
+});
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
